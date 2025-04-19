@@ -49,7 +49,7 @@ include 'connect.php';
                 <td>'.$mobile.'</td>
                 <td>
                 <a href="update.php?updateid='.$id.'" class="btn btn-dark">Update</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a href="delete.php?deleteid='.$id.'" class="btn btn-danger">Delete</a>
                 </td>
               </tr>';
             }
