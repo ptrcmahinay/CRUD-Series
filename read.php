@@ -30,34 +30,32 @@ include 'connect.php';
         </thead>
         <tbody>
           <?php
-          // select query
-          $sql="Select * from `seriescrud`";
-          $result=mysqli_query($con, $sql);
-          while($row=mysqli_fetch_assoc($result)){{
-            $id = $row['id'];
-            $fname = $row['fname'];
-            $lname = $row['lname'];
-            $email = $row['email'];
-            $mobile = $row['mobile'];
+            // select query
+            $sql="SELECT * FROM `seriescrud`";
+            $result=mysqli_query($con, $sql);
+            while($row=mysqli_fetch_assoc($result)){
+              $id = $row['id'];
+              $fname = $row['fname'];
+              $lname = $row['lname'];
+              $email = $row['email'];
+              $mobile = $row['mobile'];
 
-            // concatenation ex '.$email,'
-            echo '<tr>
-              <th scope="row">'.$id.'</th>
-              <td>'.$fname.'</td>
-              <td>'.$lname.'</td>
-              <td>'.$email.'</td>
-              <td>'.$mobile.'</td>
-              <td>
-              <a href="#" class="btn btn-dark">Update</a>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </td>
-            </tr>';
-          }}
+              // concatenation ex '.$email,'
+              echo '<tr>
+                <th scope="row">'.$id.'</th>
+                <td>'.$fname.'</td>
+                <td>'.$lname.'</td>
+                <td>'.$email.'</td>
+                <td>'.$mobile.'</td>
+                <td>
+                <a href="update.php?updateid='.$id.'" class="btn btn-dark">Update</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>';
+            }
           ?>
-
         </tbody>
       </table>
     </div>
-
   </body>
 </html>
