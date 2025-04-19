@@ -6,7 +6,7 @@
   $result=mysqli_query($con, $sql);
 
   if($result){
-    // echo "deleted successfully";
+    // redirected to read
     header('location:read.php');
   }else{
     die(mysqli_error($con));

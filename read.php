@@ -25,6 +25,7 @@ include 'connect.php';
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             <th scope="col">Mobile</th>
+            <th scope="col">Subjects</th>
             <th scope="col">Operations</th>
           </tr>
         </thead>
@@ -39,6 +40,7 @@ include 'connect.php';
               $lname = $row['lname'];
               $email = $row['email'];
               $mobile = $row['mobile'];
+              $datas=$row['multipleData'];
 
               // concatenation ex '.$email,'
               echo '<tr>
@@ -47,6 +49,7 @@ include 'connect.php';
                 <td>'.$lname.'</td>
                 <td>'.$email.'</td>
                 <td>'.$mobile.'</td>
+                <td>'.$datas.'</td>
                 <td>
                 <a href="update.php?updateid='.$id.'" class="btn btn-dark">Update</a>
                 <a href="delete.php?deleteid='.$id.'" class="btn btn-danger">Delete</a>

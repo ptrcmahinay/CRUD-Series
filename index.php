@@ -9,9 +9,11 @@ if (isset($_POST['submit'])) {
   $lname=$_POST['lname'];
   $email=$_POST['email'];
   $mobile=$_POST['mobile'];
+  $datas=$_POST['data'];
+  $allData = implode(",", $datas);
 
   // insert query - inserting data into database 
-  $sql="insert into `seriescrud` (fname, lname, email, mobile) values('$fname','$lname','$email','$mobile')";
+  $sql="insert into `seriescrud` (fname, lname, email, mobile, multipleData) values('$fname','$lname','$email','$mobile', '$allData')";
 
   // $con var is in the connect.php file, variable sql=query
   // To execute insert query we uses mysqli_query method
@@ -56,6 +58,12 @@ if (isset($_POST['submit'])) {
       <div class="mb-3">
         <label class="form-label">Mobile Number</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your mobile number:" name="mobile" autocomplete="off">
+      </div>
+      <div>
+        <input type="checkbox" name="data[]" value="JavaScript"> JavaScript
+        <input type="checkbox" name="data[]" value="React"> React
+        <input type="checkbox" name="data[]" value="HTML"> HTML
+        <input type="checkbox" name="data[]" value="CSS"> CSS
       </div>
       <button class="btn btn-dark btn-lg my-3" name="submit">Submit</button>
     </form>

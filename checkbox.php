@@ -2,7 +2,7 @@
 include 'connect.php';
 if(isset($_POST['submit'])){
   $datas=$_POST['data'];
-  // echo $datas;
+  // array into strings
   $allData = implode(", ", $datas);
   // echo $allData;
 
