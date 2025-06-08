@@ -11,9 +11,12 @@ if (isset($_POST['submit'])) {
   $mobile=$_POST['mobile'];
   $datas=$_POST['data'];
   $allData = implode(",", $datas);
+  $gender = $_POST['gender'];
+  $place = $_POST['place'];
 
   // insert query - inserting data into database 
-  $sql="insert into `seriescrud` (fname, lname, email, mobile, multipleData) values('$fname','$lname','$email','$mobile', '$allData')";
+  $sql = "INSERT INTO `seriescrud` (fname, lname, email, mobile, multipleData, gender, place) 
+  VALUES ('$fname','$lname','$email','$mobile','$allData','$gender','$place')";
 
   // $con var is in the connect.php file, variable sql=query
   // To execute insert query we uses mysqli_query method
@@ -53,7 +56,6 @@ if (isset($_POST['submit'])) {
       <div class="mb-3">
         <label class="form-label">Email</label>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email:" name="email" autocomplete="off">
-        <!-- autocomplete="off" - to not have suggestion when filling a form -->
       </div>
       <div class="mb-3">
         <label class="form-label">Mobile Number</label>
@@ -65,6 +67,22 @@ if (isset($_POST['submit'])) {
         <input type="checkbox" name="data[]" value="HTML"> HTML
         <input type="checkbox" name="data[]" value="CSS"> CSS
       </div>
+      <div class="my-3">
+        Gender: 
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="kids">Kids
+      </div>
+
+      <div>
+        <select name="place">
+          <option value="Naic">Naic</option>
+          <option value="Bagong Kalsada">Bagong Kalsada</option>
+          <option value="Bancaan">Bancaan</option>
+          <option value="Bucana Malaki">Bucana Malaki</option>
+        </select>
+      </div>
+    
       <button class="btn btn-dark btn-lg my-3" name="submit">Submit</button>
     </form>
   </div>

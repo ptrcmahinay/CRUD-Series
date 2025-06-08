@@ -1,5 +1,5 @@
 <?php
-// variable                  password (empty), database name
+// variable                  password (empty), database name 
 $con=mysqli_connect('localhost', 'root', '', 'crudseries');
 
 // show only if error

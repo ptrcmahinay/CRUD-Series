@@ -1,19 +1,17 @@
 <?php
 include 'connect.php';
-
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-
     <title>Display data</title>
+
   </head>
   <body>
     <div class="container my-5">
@@ -26,6 +24,8 @@ include 'connect.php';
             <th scope="col">Email</th>
             <th scope="col">Mobile</th>
             <th scope="col">Subjects</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Place</th>
             <th scope="col">Operations</th>
           </tr>
         </thead>
@@ -41,6 +41,8 @@ include 'connect.php';
               $email = $row['email'];
               $mobile = $row['mobile'];
               $datas=$row['multipleData'];
+              $gender=$row['gender'];
+              $place=$row['place'];
 
               // concatenation ex '.$email,'
               echo '<tr>
@@ -50,6 +52,8 @@ include 'connect.php';
                 <td>'.$email.'</td>
                 <td>'.$mobile.'</td>
                 <td>'.$datas.'</td>
+                <td>'.$gender.'</td>
+                <td>'.$place.'</td>
                 <td>
                 <a href="update.php?updateid='.$id.'" class="btn btn-dark">Update</a>
                 <a href="delete.php?deleteid='.$id.'" class="btn btn-danger">Delete</a>
